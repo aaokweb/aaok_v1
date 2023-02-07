@@ -20,7 +20,7 @@ const getSearchResults = async (filters, sortOption) => {
 	let err = false;
 	console.log(filters, sortOption);
 	const response = await fetch(
-		'http://aaok-backend.onrender.com:5000/api/searchfiltered',
+		'http://aaok-backend.onrender.com/api/searchfiltered',
 		{
 			method: 'POST',
 			headers: {
@@ -42,7 +42,7 @@ const getSearchResults = async (filters, sortOption) => {
 const getIndividualInfo = async id => {
 	let err = false;
 	const response = await fetch(
-		'http://aaok-backend.onrender.com:5000/api/individual',
+		'http://aaok-backend.onrender.com/api/individual',
 		{
 			method: 'POST',
 			headers: {
@@ -62,7 +62,7 @@ const getIndividualInfo = async id => {
 const getIndividualImg = async id => {
 	let err = false;
 	const response = await fetch(
-		`http://aaok-backend.onrender.com:5000/api/img/${id}`,
+		`http://aaok-backend.onrender.com/api/img/${id}`,
 		{
 			headers: {
 				'Cache-Control': 'public, max-age=604800, immutable',
@@ -80,7 +80,7 @@ const getIndividualImg = async id => {
 const getOthersInCluster = async cid => {
 	let err = false;
 	const response = await fetch(
-		`http://aaok-backend.onrender.com:5000/api/in-cluster/${cid}`
+		`http://aaok-backend.onrender.com/api/in-cluster/${cid}`
 	);
 	if (!response.ok) {
 		err = true;
@@ -93,7 +93,7 @@ const getOthersInCluster = async cid => {
 const getRelated = async pid => {
 	let err = false;
 	const response = await fetch(
-		`http://aaok-backend.onrender.com:5000/api/related/${pid}`
+		`http://aaok-backend.onrender.com/api/related/${pid}`
 	);
 	if (!response.ok) {
 		err = true;
@@ -106,7 +106,7 @@ const getRelated = async pid => {
 const getNumberOfLayers = async cid => {
 	let err = false;
 	const response = await fetch(
-		`http://aaok-backend.onrender.com:5000/api/number-of-layers/${cid}`
+		`http://aaok-backend.onrender.com/api/number-of-layers/${cid}`
 	);
 	if (!response.ok) {
 		err = true;
