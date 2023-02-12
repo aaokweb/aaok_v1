@@ -283,7 +283,7 @@ const InfoPage = props => {
 						{individualInfo ? (
 							<>
 								Location in Image:{' '}
-								<i>{individualInfo['LocationInPicture'].trim()}.</i>
+								<i>{individualInfo['LocationInPicture']?.trim()}.</i>
 							</>
 						) : null}
 					</Card.Body>
