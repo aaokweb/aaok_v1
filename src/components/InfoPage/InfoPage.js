@@ -250,13 +250,23 @@ const InfoPage = props => {
 				{imgModal}
 				<Card className="featured-card round-bg">
 					{!imgIsLoading ? (
-						// individualInfo?.['link'] ? (
-						<img
-							className="round-bg mt-2 clickable-img"
-							src={img}
-							onClick={() => setShowImgModal(true)}
-							alt="Individual."
-						/>
+						individualInfo ? (
+							<img
+								className="round-bg mt-2 clickable-img"
+								src={img}
+								onClick={() => setShowImgModal(true)}
+								alt="Individual."
+							/>
+						) : (
+							<div
+								style={{ height: '45vh' }}
+								className="centered-row position-sticky"
+							>
+								<i>
+									<h4 style={{ marginTop: '18vh' }}>Loading...</h4>
+								</i>
+							</div>
+						)
 					) : (
 						// ) : (
 						// 	<img
