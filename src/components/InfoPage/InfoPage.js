@@ -33,15 +33,23 @@ const InfoPage = props => {
 			try {
 				setError(false);
 				setIsLoading(true);
+				setImgIsLoading(true);
 				const [data, err] = await getIndividualInfo(id);
 				if (err) {
 					setError(true);
 					setIsLoading(false);
 					setIndividualInfo(null);
+					setImgIsLoading(false);
 					return;
 				}
 				setIsLoading(false);
 				setIndividualInfo(data);
+				setImgIsLoading(false);
+				if (individualInfo?.['link']) {
+					setImg(individualInfo['link']);
+				} else {
+					setImg('/none.png');
+				}
 			} catch (e) {
 				setError(true);
 				setIsLoading(false);
@@ -52,33 +60,33 @@ const InfoPage = props => {
 		asyncEffect();
 	}, [id]);
 
-	useEffect(() => {
-		const asyncEffect = async () => {
-			if (individualInfo) {
-				try {
-					setImgIsLoading(true);
-					// const [imgObjURL, err] = await getIndividualImg(
-					// 	individualInfo['PictureId']
-					// if (err) {
-					// 	setImgIsLoading(false);
-					// 	setImg(null);
-					// 	return;
-					// }
-					setImgIsLoading(false);
-					if (individualInfo['link']) {
-						setImg(individualInfo['link']);
-					} else {
-						setImg('/none.png');
-					}
-				} catch (e) {
-					setImgIsLoading(false);
-					setImg(null);
-					throw e;
-				}
-			}
-		};
-		asyncEffect();
-	}, [individualInfo]);
+	// useEffect(() => {
+	// 	const asyncEffect = async () => {
+	// 		if (individualInfo) {
+	// 			try {
+	// 				setImgIsLoading(true);
+	// 				// const [imgObjURL, err] = await getIndividualImg(
+	// 				// 	individualInfo['PictureId']
+	// 				// if (err) {
+	// 				// 	setImgIsLoading(false);
+	// 				// 	setImg(null);
+	// 				// 	return;
+	// 				// }
+	// 				setImgIsLoading(false);
+	// 				if (individualInfo['link']) {
+	// 					setImg(individualInfo['link']);
+	// 				} else {
+	// 					setImg('/none.png');
+	// 				}
+	// 			} catch (e) {
+	// 				setImgIsLoading(false);
+	// 				setImg(null);
+	// 				throw e;
+	// 			}
+	// 		}
+	// 	};
+	// 	asyncEffect();
+	// }, [individualInfo]);
 
 	useEffect(() => {
 		const asyncEffect = async () => {
@@ -250,7 +258,7 @@ const InfoPage = props => {
 				{imgModal}
 				<Card className="featured-card round-bg">
 					{!imgIsLoading ? (
-						img ? (
+						individualInfo?.link ? (
 							<img
 								className="round-bg mt-2 clickable-img"
 								src={img}
@@ -283,7 +291,12 @@ const InfoPage = props => {
 						{individualInfo ? (
 							<>
 								Location in Image:{' '}
-								<i>{individualInfo['LocationInPicture']?.trim()}.</i>
+								<i>
+									{individualInfo['LocationInPicture']
+										? individualInfo['LocationInPicture'].trim()
+										: ''}
+									.
+								</i>
 							</>
 						) : null}
 					</Card.Body>
