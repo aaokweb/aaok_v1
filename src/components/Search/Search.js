@@ -21,7 +21,7 @@ import {
 	ListGroup,
 } from 'react-bootstrap';
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
-import React, { useState, useContext, forwardRef, useEffect } from 'react';
+import React, { useState, useContext, forwardRef } from 'react';
 import { Lang } from '../Lang/Lang';
 import * as constants_en from '../Constants/Constants_en';
 import * as constants_kr from '../Constants/Constants_kr';
@@ -631,9 +631,10 @@ const Search = props => {
 													/>
 												</span>
 												<Dropdown.Toggle
-													as={SortDropdown}
 													text={sortOption}
-													id="dropdown-custom-components"
+													variant=""
+													as={SortDropdown}
+													id="dropdown-basic-components"
 												/>
 												<Dropdown.Menu className="super-colors">
 													{Object.keys(sortOptions).map(
@@ -649,117 +650,148 @@ const Search = props => {
 													)}
 												</Dropdown.Menu>
 											</Dropdown>
-											<span class="badge">
-												<Lang
-													isEn={props.isEn}
-													en={'Advanced Search'}
-													kr={'검색 필터'}
-												/>
-											</span>
 
-											<AdvancedToggle eventKey="0" />
+											<div>
+												<span class="badge">
+													<Lang
+														isEn={props.isEn}
+														en={'Advanced Search'}
+														kr={'검색 필터'}
+													/>
+												</span>
 
-											<Accordion.Collapse eventKey="0">
-												<Row id="accordion-body">
-													<Col id="adv-col1" xs={12} lg={4}>
-														<AdvancedSelectController
-															key={3}
-															title=<Lang
-																isEn={props.isEn}
-																en={'Location'}
-																kr={'장소'}
+												<AdvancedToggle eventKey="0" />
+
+												<Accordion.Collapse eventKey="0">
+													<Row id="accordion-body">
+														<Col id="adv-col1" xs={12} lg={4}>
+															<AdvancedSelectController
+																key={3}
+																title={
+																	<Lang
+																		isEn={props.isEn}
+																		en={'Location'}
+																		kr={'장소'}
+																	/>
+																}
+																item={
+																	advancedFilters[
+																		optionsKeys[3]
+																	]
+																}
+																options={advancedFilters}
+																index={3}
 															/>
-															item={
-																advancedFilters[optionsKeys[3]]
-															}
-															options={advancedFilters}
-															index={3}
-														/>
-														<AdvancedSelectController
-															key={5}
-															title=<Lang
-																isEn={props.isEn}
-																en={'Social Status'}
-																kr={'신분'}
+															<AdvancedSelectController
+																key={5}
+																title={
+																	<Lang
+																		isEn={props.isEn}
+																		en={'Social Status'}
+																		kr={'신분'}
+																	/>
+																}
+																item={
+																	advancedFilters[
+																		optionsKeys[5]
+																	]
+																}
+																options={advancedFilters}
+																index={5}
 															/>
-															item={
-																advancedFilters[optionsKeys[5]]
-															}
-															options={advancedFilters}
-															index={5}
-														/>
-													</Col>
-													<Col id="adv-col2" xs={12} lg={4}>
-														<AdvancedSelectController
-															key={4}
-															title=<Lang
-																isEn={props.isEn}
-																en={'Travel Period'}
-																kr={'유람시기'}
+														</Col>
+														<Col id="adv-col2" xs={12} lg={4}>
+															<AdvancedSelectController
+																key={4}
+																title={
+																	<Lang
+																		isEn={props.isEn}
+																		en={'Travel Period'}
+																		kr={'유람시기'}
+																	/>
+																}
+																item={
+																	advancedFilters[
+																		optionsKeys[4]
+																	]
+																}
+																options={advancedFilters}
+																index={4}
 															/>
-															item={
-																advancedFilters[optionsKeys[4]]
-															}
-															options={advancedFilters}
-															index={4}
-														/>
-														<AdvancedSelectController
-															key={6}
-															title=<Lang
-																isEn={props.isEn}
-																en={'Degree Holders'}
-																kr={'과거 급제'}
+															<AdvancedSelectController
+																key={6}
+																title={
+																	<Lang
+																		isEn={props.isEn}
+																		en={'Degree Holders'}
+																		kr={'과거 급제'}
+																	/>
+																}
+																item={
+																	advancedFilters[
+																		optionsKeys[6]
+																	]
+																}
+																options={advancedFilters}
+																index={6}
 															/>
-															item={
-																advancedFilters[optionsKeys[6]]
-															}
-															options={advancedFilters}
-															index={6}
-														/>
-													</Col>
-													<Col id="adv-col3" xs={12} lg={4}>
-														<AdvancedSelectController
-															key={2}
-															title=<Lang
-																isEn={props.isEn}
-																en={'Government Post'}
-																kr={'관직'}
+														</Col>
+														<Col id="adv-col3" xs={12} lg={4}>
+															<AdvancedSelectController
+																key={2}
+																title={
+																	<Lang
+																		isEn={props.isEn}
+																		en={'Government Post'}
+																		kr={'관직'}
+																	/>
+																}
+																item={
+																	advancedFilters[
+																		optionsKeys[2]
+																	]
+																}
+																options={advancedFilters}
+																index={2}
 															/>
-															item={
-																advancedFilters[optionsKeys[2]]
-															}
-															options={advancedFilters}
-															index={2}
-														/>
-														<AdvancedSelectController
-															key={1}
-															title=<Lang
-																isEn={props.isEn}
-																en={'Inscription Type'}
-																kr={'제명 유형'}
+															<AdvancedSelectController
+																key={1}
+																title={
+																	<Lang
+																		isEn={props.isEn}
+																		en={'Inscription Type'}
+																		kr={'제명 유형'}
+																	/>
+																}
+																item={
+																	advancedFilters[
+																		optionsKeys[1]
+																	]
+																}
+																options={advancedFilters}
+																index={1}
 															/>
-															item={
-																advancedFilters[optionsKeys[1]]
-															}
-															options={advancedFilters}
-															index={1}
-														/>
-														<AdvancedSelectController
-															key={0}
-															title=<Lang
-																isEn={props.isEn}
-																en={'Calligraphy'}
-																kr={'서체'}
+															<AdvancedSelectController
+																key={0}
+																title={
+																	<Lang
+																		isEn={props.isEn}
+																		en={'Calligraphy'}
+																		kr={'서체'}
+																	/>
+																}
+																item={
+																	advancedFilters[
+																		optionsKeys[0]
+																	]
+																}
+																options={advancedFilters}
+																index={0}
 															/>
-															item={
-																advancedFilters[optionsKeys[0]]
-															}
-															options={advancedFilters}
-															index={0}
-														/>
-													</Col>
-												</Row>
-											</Accordion.Collapse>
+														</Col>
+													</Row>
+												</Accordion.Collapse>
+											</div>
 										</Accordion>
 									</Row>
 								</Col>
@@ -1048,12 +1080,12 @@ const SearchToggle = ({
 	);
 	const isCurrentEventKey = currentEventKey === eventKey;
 
-	useEffect(() => {
-		document.addEventListener('keypress', searchOnEnterKeypress);
-		return () => {
-			document.removeEventListener('keypress', searchOnEnterKeypress);
-		};
-	});
+	// useEffect(() => {
+	// 	document.addEventListener('keypress', searchOnEnterKeypress);
+	// 	return () => {
+	// 		document.removeEventListener('keypress', searchOnEnterKeypress);
+	// 	};
+	// });
 
 	return isCurrentEventKey ? (
 		<div onClick={toggleAccordian}>{children}</div>
@@ -1122,7 +1154,7 @@ const AdvancedSelect = props => {
 	);
 };
 
-const SortDropdown = forwardRef((props, { children, onClick, text }, ref) => (
+const SortDropdown = forwardRef(({ children, onClick, text }, ref) => (
 	<Badge
 		ref={ref}
 		onClick={e => {
@@ -1130,7 +1162,8 @@ const SortDropdown = forwardRef((props, { children, onClick, text }, ref) => (
 			onClick(e);
 		}}
 	>
-		{' ▼'}
+		{children}
+		&#x25bc;
 	</Badge>
 ));
 
