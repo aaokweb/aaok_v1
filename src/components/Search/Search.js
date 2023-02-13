@@ -236,7 +236,7 @@ const Search = props => {
 					kr={constants_kr.knownOnly}
 				></Lang>
 			),
-			sonjo: (
+			Sŏnjo: (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.sonjo}
@@ -264,7 +264,7 @@ const Search = props => {
 					kr={constants_kr.hyojong}
 				></Lang>
 			),
-			hyonjong: (
+			Hyŏnjong: (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.hyonjong}
@@ -278,14 +278,14 @@ const Search = props => {
 					kr={constants_kr.sukchong}
 				></Lang>
 			),
-			kyongjongYongjo: (
+			'Kyŏngjong/Yŏngjo': (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.kyongjongYongjo}
 					kr={constants_kr.kyongjongYongjo}
 				></Lang>
 			),
-			chongjo: (
+			Chŏngjo: (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.chongjo}
@@ -299,14 +299,14 @@ const Search = props => {
 					kr={constants_kr.sunjo}
 				></Lang>
 			),
-			honjong: (
+			Hŏnjong: (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.honjong}
 					kr={constants_kr.honjong}
 				></Lang>
 			),
-			choljong: (
+			"Ch'ŏljong": (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.choljong}
