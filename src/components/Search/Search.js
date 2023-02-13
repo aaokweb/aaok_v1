@@ -577,7 +577,6 @@ const Search = props => {
 										<Link
 											id="help-link"
 											to={path + routes.searchGuide}
-											target="_blank"
 											rel="noopener noreferrer"
 										>
 											<nav>
