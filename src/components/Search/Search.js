@@ -141,7 +141,7 @@ const Search = props => {
 					kr={constants_kr.minister}
 				></Lang>
 			),
-			primeMinister: (
+			'prime Minister': (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.primeMinister}
@@ -171,49 +171,49 @@ const Search = props => {
 			),
 		},
 		Location: {
-			jadeStreamRavine: (
+			'jade Stream Ravine': (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.jadeStreamRavine}
 					kr={constants_kr.jadeStreamRavine}
 				></Lang>
 			),
-			manmulcho: (
+			"manmulch'o": (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.manmulcho}
 					kr={constants_kr.manmulcho}
 				></Lang>
 			),
-			myogilsangBuddha: (
+			'myogilsang Buddha': (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.myogilsangBuddha}
 					kr={constants_kr.myogilsangBuddha}
 				></Lang>
 			),
-			nineDragonFalls: (
+			'nine Dragon Falls': (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.nineDragonFalls}
 					kr={constants_kr.nineDragonFalls}
 				></Lang>
 			),
-			podokHermitage: (
+			'Podŏk Hermitage': (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.podokHermitage}
 					kr={constants_kr.podokHermitage}
 				></Lang>
 			),
-			tenThousandFallsRavine: (
+			'ten Thousand Falls Ravine': (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.tenThousandFallsRavine}
 					kr={constants_kr.tenThousandFallsRavine}
 				></Lang>
 			),
-			threeBuddhaRock: (
+			'three Buddha Rock': (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.threeBuddhaRock}
@@ -387,21 +387,21 @@ const Search = props => {
 			),
 		},
 		'Degree Holders': {
-			civilExam: (
+			civil: (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.civilExam}
 					kr={constants_kr.civilExam}
 				></Lang>
 			),
-			militaryExam: (
+			military: (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.militaryExam}
 					kr={constants_kr.militaryExam}
 				></Lang>
 			),
-			technicalExam: (
+			technical: (
 				<Lang
 					isEn={props.isEn}
 					en={constants_en.technicalExam}
