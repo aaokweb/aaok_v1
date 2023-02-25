@@ -403,16 +403,6 @@ const InfoPage = props => {
 											</Row>
 											<Row>
 												<Col xs={4}>
-													<p>Yangban: </p>
-												</Col>
-												<Col xs={8}>
-													{yesNoOrNull(
-														individualInfo['IsYangban']
-													)}
-												</Col>
-											</Row>
-											<Row>
-												<Col xs={4}>
 													<p>Chungin: </p>
 												</Col>
 												<Col xs={8}>
@@ -441,10 +431,46 @@ const InfoPage = props => {
 											</Row>
 											<Row>
 												<Col xs={4}>
+													<p>Marginalized Yangban: </p>
+												</Col>
+												<Col xs={8}>
+													{yesNoOrNull(
+														individualInfo['isYangban']
+													)}
+												</Col>
+											</Row>
+											<Row>
+												<Col xs={4}>
 													<p>Monk: </p>
 												</Col>
 												<Col xs={8}>
 													{yesNoOrNull(individualInfo['IsMonk'])}
+												</Col>
+											</Row>
+											<Row>
+												<Col xs={4}>
+													<p>Slave: </p>
+												</Col>
+												<Col xs={8}>
+													{yesNoOrNull(individualInfo['IsSlave'])}
+												</Col>
+											</Row>
+											<Row>
+												<Col xs={4}>
+													<p>Yangban: </p>
+												</Col>
+												<Col xs={8}>
+													{yesNoOrNull(
+														individualInfo['IsYangban']
+													)}
+												</Col>
+											</Row>
+											<Row>
+												<Col xs={4}>
+													<p>Undetermined: </p>
+												</Col>
+												<Col xs={8}>
+													{yesNoOrNull(individualInfo['IsSlave'])}
 												</Col>
 											</Row>
 										</Col>
