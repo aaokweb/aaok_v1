@@ -425,7 +425,7 @@ const Search = props => {
 	const [nameFilterValue, setNameFilterValue] = useState('');
 	const [sortOption, setSortOption] = useState(sortOptions.relevance);
 	const [isLoading, setIsLoading] = useState(false);
-	const [clear, setClear] = useState(false);
+	// const [clear, setClear] = useState(false);
 	const { path } = useRouteMatch();
 
 	const getAdjacentPersonIds = index => {
@@ -1052,12 +1052,12 @@ function ResultRow(props) {
 			</Col>
 			<Col xs={12} sm={4}>
 				<p>
-					{check(props.row['SubLocationEngl']) + ', '}
+					{check(props.row['SublocationEngl']) + ', '}
 					<br />
 					{check(props.row['LocationEngl'])}
 					<div style={{ fontSize: '.7rem' }}>
 						<br />
-						{check(props.row['SublocationEnglTranslit']) +
+						{check(props.row['SubLocationEnglTranslit']) +
 							', ' +
 							check(props.row['LocationEnglTranslit'])}
 						<br />

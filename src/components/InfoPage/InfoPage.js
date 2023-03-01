@@ -65,8 +65,8 @@ const InfoPage = props => {
 					// 	return;
 					// }
 					setImgIsLoading(false);
-					if (individualInfo['link']) {
-						setImg(individualInfo['link']);
+					if (individualInfo['Link']) {
+						setImg(individualInfo['Link']);
 					} else {
 						setImg('/none.png');
 					}
@@ -435,7 +435,9 @@ const InfoPage = props => {
 												</Col>
 												<Col xs={8}>
 													{yesNoOrNull(
-														individualInfo['isYangban']
+														individualInfo[
+															'IsMarginalizedYangban'
+														]
 													)}
 												</Col>
 											</Row>
@@ -485,7 +487,7 @@ const InfoPage = props => {
 										<h5>Location:</h5>
 										<br />
 										<p>
-											{sameOrNull(individualInfo['SubLocationEngl'])}
+											{sameOrNull(individualInfo['SublocationEngl'])}
 											{','}
 											<br />
 											{sameOrNull(individualInfo['LocationEngl'])}
@@ -494,7 +496,7 @@ const InfoPage = props => {
 												<span>
 													{sameOrNull(
 														individualInfo[
-															'SublocationEnglTranslit'
+															'SubLocationEnglTranslit'
 														]
 													)}
 													{', '}
