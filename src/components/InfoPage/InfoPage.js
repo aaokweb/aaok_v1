@@ -535,7 +535,7 @@ const InfoPage = props => {
 										<p>{clusterType(individualInfo)}</p>
 									</Row>
 								</ListGroup.Item>
-								<ListGroup.Item>
+								{/* <ListGroup.Item>
 									<Row>
 										<h5>Layer in Cluster:</h5>
 										<br />
@@ -550,7 +550,7 @@ const InfoPage = props => {
 											(total)
 										</p>
 									</Row>
-								</ListGroup.Item>
+								</ListGroup.Item> */}
 								<ListGroup.Item>
 									<Row>
 										<h5>Individuals in Cluster:</h5>
