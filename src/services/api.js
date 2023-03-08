@@ -36,7 +36,7 @@ const getSearchResults = async (filters, sortOption) => {
 		console.log('error', err);
 	}
 	const data = await response.json();
-	// console.log('data', data);
+	console.log('data', data);
 	return [data, err];
 };
 
