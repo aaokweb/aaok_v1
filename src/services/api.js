@@ -2,6 +2,7 @@
 
 // const url = 'http://localhost:5000';
 const url = 'https://aaok-back.onrender.com';
+// const url = 'https://aaokbackend.onrender.com';
 
 const getSearchResults = async (filters, sortOption) => {
 	// console.log('getSearchResults', filters);
@@ -36,7 +37,7 @@ const getSearchResults = async (filters, sortOption) => {
 		console.log('error', err);
 	}
 	const data = await response.json();
-	console.log('data', data);
+	// console.log('data', data);
 	return [data, err];
 };
 
